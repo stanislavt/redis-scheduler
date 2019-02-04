@@ -1,0 +1,33 @@
+{
+  "name": "redis-scheduler",
+  "version": "1.0.0",
+  "description": "Create a scheduler based on Redis",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config index.js",
+    "docker": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanislavt/redis-scheduler.git"
+  },
+  "author": "Stanislav Tarasenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanislavt/redis-scheduler/issues"
+  },
+  "homepage": "https://github.com/stanislavt/redis-scheduler#readme",
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "commander": "^2.19.0",
+    "cron": "^1.6.0",
+    "dotenv": "^6.2.0",
+    "moment": "^2.24.0",
+    "redis": "^2.8.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

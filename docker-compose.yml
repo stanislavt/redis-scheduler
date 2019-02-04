@@ -1,0 +1,16 @@
+version: '2'
+services:
+  app:
+    command: bash -c "npm run docker"
+    image: node:10.15
+    env_file: .env
+    volumes:
+      - .:/usr/local/src/api
+    working_dir: /usr/local/src/api
+
+  redis:
+    image: redis:5.0.3
+    ports:
+      - 6379:6379
+    expose:
+      - 6379
