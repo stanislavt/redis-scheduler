@@ -43,13 +43,13 @@ function handler(item) {
   const time = moment.unix(item.time).utc();
 
   if(time < moment.utc() && item.time > 0) {
-    logger.debug('This member is obsolete', { time: time.format(), msg: item.msg });
+    job(item.msg);
 
-    client.zrem(host, item.msg, cb_zrem);
+    return;
   }
 
   const pattern = `${time.seconds()} ${time.minute()} ${time.hours()} ${time.date()} ${time.month()} *`;
-  new CronJob(pattern, () => job(item.msg), null, true, 'UTC');
+  return new CronJob(pattern, () => job(item.msg), null, true, 'UTC');
 }
 
 function prepare(data) {

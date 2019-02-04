@@ -4,6 +4,8 @@ services:
     command: bash -c "npm run docker"
     image: node:10.15
     env_file: .env
+    depends_on:
+      - redis
     volumes:
       - .:/usr/local/src/api
     working_dir: /usr/local/src/api
